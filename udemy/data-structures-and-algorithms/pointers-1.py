@@ -1,3 +1,6 @@
+# the variables here points to different places in memory
+# when changing a variable specific value you uses more moemory
+
 number_1 = 1
 number_2 = number_1
 
