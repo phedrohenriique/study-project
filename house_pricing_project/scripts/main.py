@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.tree import DecisionTreeRegressor
+from sklearn.metrics import mean_absolute_error
 
 features = ['bedrooms','bathrooms','sqft_living','sqft_lot','floors','yr_built']
 target_attribute = ['price']

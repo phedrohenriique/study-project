@@ -7,6 +7,9 @@ class Node:
         self.next = None
 
 
+    def __str__(self) -> str:
+        return str(self.value)
+    
 class LinkedList:
 
     def __init__(self, value=None) -> None:
@@ -22,7 +25,7 @@ class LinkedList:
             self.length = 0
             self.list_items = []
 
-        if value is not None:
+        if value is not None: # !==
             new_node = Node(value)
             self.head = new_node
             self.tail = new_node
@@ -59,13 +62,16 @@ class LinkedList:
             self.list_items.append(new_node)
             self.length = self.length + 1
         
+    def pop_list(self, value):
+        pass
 
 linked_list = LinkedList(999)
-#linked_list.append_list(5)
-#linked_list.append_list(10)
+linked_list.append_list(5)
+linked_list.append_list(10)
 #linked_list.append_list(15)
 # linked_list = LinkedList(10)
 # linked_list.append_list(5)
 
-linked_list.print_list()
+#linked_list.print_list()
+print(linked_list.head)
 

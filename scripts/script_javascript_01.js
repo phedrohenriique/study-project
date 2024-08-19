@@ -1,5 +1,5 @@
 const moduleTest = require('./compiled/script_typescript_01')
-console.log(moduleTest)
+//console.log(moduleTest)
 
 // async function loadModule() {
 //     try {
@@ -14,3 +14,12 @@ console.log(moduleTest)
 // }
 
 // loadModule()
+
+const simpleList = [1, 2, 3, 4, 5, 6]
+
+function filterHandler(){
+    const response = simpleList.filter((item)=>{return item % 2 == 0})
+    console.log(response)
+}
+
+filterHandler()
