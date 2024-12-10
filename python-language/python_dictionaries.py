@@ -58,4 +58,3 @@ print(dict1)  # Output: {'name': 'Alice', 'age': 26, 'city': 'New York'}
 
 # CHECKING LENGTH
 print(len(my_dict))  # Output: Number of key-value pairs
-
