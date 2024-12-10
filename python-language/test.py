@@ -11,6 +11,8 @@ def testing_loops():
     for n1,n2 in zip(list1,list2):
         print(n1, n2)
 
+def simple_queue():
+    pass
 
 if __name__ == "__main__":
     testing_loops()
