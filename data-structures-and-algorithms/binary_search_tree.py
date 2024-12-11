@@ -1,4 +1,14 @@
 
+import random
+
+
+def random_list(n):
+    generated_list = []
+    for n in range(n):
+        generated_list.append(random.randint(0, 100))
+    return generated_list
+
+
 class Node:
 
     def __init__(self, value) -> None:
@@ -32,14 +42,37 @@ class BinarySearchTree:
                     return True
                 temp = temp.right
 
+    def contains(self, value) -> bool:
+        # if self.root is None:
+        #     return False
+        temp = self.root
+        while temp is not None:
+            if value < temp.value:
+                temp = temp.left
+            elif value > temp.value: # it makes the statements exclusives, if one happens the other do not
+                temp = temp.right
+            else:
+                return True
+        return False
+
 
 if __name__ == "__main__":
-
+    contains_number = 8
     my_tree = BinarySearchTree()
-    my_tree.insert(2)
-    my_tree.insert(1)
-    my_tree.insert(3)
+    my_new_list = random_list(10)
+    for item in my_new_list:
+        my_tree.insert(item)
+    print('the list is :', my_new_list)
+    does_contain = my_tree.contains(contains_number)
+    if does_contain is True:
+        print('tree contains : ', contains_number)
+    if does_contain is False:
+        print('three does not contains :', contains_number)
 
-    print(my_tree.root.value)
-    print(my_tree.root.left.value)
-    print(my_tree.root.right.value)
+    # my_tree.insert(2)
+    # my_tree.insert(1)
+    # my_tree.insert(3)
+
+    # print(my_tree.root.value)
+    # print(my_tree.root.left.value)
+    # print(my_tree.root.right.value)
