@@ -1,4 +1,4 @@
-# BFS algorithm
+# DFS algorithm
 
 import random
 
@@ -56,24 +56,47 @@ class BinarySearchTree:
                 return True
         return False
 
-    def bfs(self):
-        current_node = self.root
-        queue = []
+    def dfs(self):
         result = []
-        queue.append(current_node)
-        while len(queue) > 0:
-            current_node = queue.pop()
-            result.append(current_node.value)
-            if current_node.left is not None:
-                queue.append(current_node.left)
-            if current_node.right is not None:
-                queue.append(current_node.right)
+        self.traverse(self.root, result)
         return result
+
+    def dfs_post_order(self):
+        result = []
+        self.traverse_post_oder(self.root, result)
+        return result
+
+    def dfs_in_order(self):
+        result = []
+        self.traverse_in_order(self.root, result)
+        return result
+
+    def traverse(self, current_node, result_list):  # pre order
+        result_list.append(current_node.value)
+        if current_node.left is not None:
+            self.traverse(current_node.left, result_list)
+        if current_node.right is not None:
+            self.traverse(current_node.right, result_list)
+
+    def traverse_post_oder(self, current_node, result_list):
+        if current_node.left is not None:
+            self.traverse_post_oder(current_node.left, result_list)
+        if current_node.right is not None:
+            self.traverse_post_oder(current_node.right, result_list)
+        result_list.append(current_node.value)
+
+    def traverse_in_order(self, current_node, result_list):
+        if current_node.left is not None:
+            self.traverse_in_order(current_node.left, result_list)
+        result_list.append(current_node.value)
+        if current_node.right is not None:
+            self.traverse_in_order(current_node.value, result_list)
+
 
 if __name__ == "__main__":
     contains_number = 8
     my_tree = BinarySearchTree()
-    my_new_list = random_list(10)
+    my_new_list = random_list(7)
     for item in my_new_list:
         my_tree.insert(item)
     print('the list is :', my_new_list)
@@ -90,4 +113,6 @@ if __name__ == "__main__":
     # print(my_tree.root.value)
     # print(my_tree.root.left.value)
     # print(my_tree.root.right.value)
-    print(my_tree.bfs())
+
+    # print(my_tree.dfs())
+    print(my_tree.dfs_post_order())
