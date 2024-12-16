@@ -34,12 +34,39 @@ class Stack:
         self.height -= 1
         return temp
 
+# INTERVIEW QUESTIONS
+
+
+class StackInterview:
+
+    def __init__(self) -> None:
+        self.stack_list = []
+
+    def stack_push(self, value):
+        self.stack_list.append(value)
+
+    def stack_pop(self):
+        item = self.stack_list.pop()
+        return item
+
+    def stack_list(self):
+        return self.stack_list
+
+
 if __name__ == "__main__":
 
-    stack = Stack(1)
-    stack.push(2)
-    stack.push(3)
-    stack.print_stack()
-    stack.pop()
-    stack.pop()
-    stack.print_stack()
+    # stack = Stack(1)
+    # stack.push(2)
+    # stack.push(3)
+    # stack.print_stack()
+    # stack.pop()
+    # stack.pop()
+    # stack.print_stack()
+
+    my_stack = StackInterview()
+    my_stack.stack_push(1)
+    my_stack.stack_push(3)
+    my_stack.stack_push(5)
+    print(my_stack.stack_list)
+    my_stack.stack_pop()
+    print(my_stack.stack_list)
