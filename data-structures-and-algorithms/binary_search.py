@@ -14,6 +14,19 @@ def binary_search(target, search_list, low_index, high_index):
         return binary_search(target, search_list, low_index, middle_index-1)
     if search_list[middle_index] < target:
         return binary_search(target, search_list, middle_index+1, high_index)
+    
+def binarySearch(array, target):
+    low_index = 0
+    high_index = len(array)-1
+    while low_index <= high_index:
+        middle_index = (low_index+high_index)//2
+        if target == array[middle_index]:
+            return middle_index
+        elif target > array[middle_index]:
+            low_index = middle_index +1
+        elif target < array[middle_index]:
+            high_index = middle_index -1
+    return -1
 
 
 if __name__ == "__main__":

@@ -49,3 +49,5 @@ def balancedBrackets(string):
     if len(my_stack.stack_list) > 0:
         return False
     return True
+
+# BIG O -> O(n)
