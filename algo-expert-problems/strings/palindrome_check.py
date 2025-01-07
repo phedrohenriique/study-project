@@ -1,6 +1,4 @@
 def isPalindrome(string):
-    # Write your code here.
-    # stack solution
     counter = -1
     middle = int(len(string))
 
@@ -9,7 +7,7 @@ def isPalindrome(string):
         
     for s in range(middle):
         if string[s] == string[counter]:
-            counter +=1
+            counter -=1
             continue
         elif string[s] == string[-s-1]:
             continue

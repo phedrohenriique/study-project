@@ -28,6 +28,10 @@ transposed_matrix = []
 
 my_nested_list = [1,2,[3,4]]
 
+counter = -1
+
+my_palindrome = 'abcdcba'
+
 if __name__ == "__main__":
     # print(my_list[0:5][1:2])
     # print(len(my_list))
@@ -37,6 +41,16 @@ if __name__ == "__main__":
     #print(transposed_matrix)
     #pass
 
-    for n in my_nested_list:
-        if hasattr(n,'__iter__'):
-            print(n)
+    # for n in my_nested_list:
+    #     if hasattr(n,'__iter__'):
+    #         print(n)
+
+    if my_palindrome[0] == my_palindrome[-1]:
+        print(my_palindrome[0])
+
+    if my_palindrome[1] == my_palindrome[-2]:
+        print(my_palindrome[1])
+
+    # for n in range(11):
+    #     print(counter)
+    #     counter +=1
